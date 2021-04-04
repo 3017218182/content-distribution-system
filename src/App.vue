@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
-    <el-container>
-      <el-header style="background-color: #42b983">管理系统</el-header>
-      <el-main>
-        <router-view></router-view>
-      </el-main>
-    </el-container>
+    <div id="app">
+        <el-container>
+            <el-header style="background-color: #42b983">管理系统</el-header>
+            <el-main>
+              <router-view></router-view>
+          </el-main>
+      </el-container>
 <!--    <el-row>-->
 <!--      <el-col span="6">-->
 <!--        -->
@@ -22,10 +22,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  // components: {
-  //   HelloWorld
-  // }
+    name: 'App'
 }
 </script>
 

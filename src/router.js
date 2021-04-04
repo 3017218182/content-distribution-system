@@ -47,7 +47,7 @@ const routers = [
         ]
     },
     {
-        path : '',
+        path : '/',
         name : 'login',
         component : Login
     },
