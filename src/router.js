@@ -1,5 +1,6 @@
 import Waiting from "./components/waiting"
-import History from "./components/history"
+import HistoryOfMessages from "./components/historyOfMessages"
+import HistoryOfOperations from "./components/historyOfOperations"
 import Draft from "./components/draft"
 import Edit from "./components/edit"
 import Writer from "./pages/writer"
@@ -35,9 +36,14 @@ const routers = [
                 component : Edit
             },
             {
-                path : 'history',
-                name : 'history',
-                component: History
+                path : 'historyOfMessages',
+                name : 'historyOfMessages',
+                component: HistoryOfMessages
+            },
+            {
+                path : 'historyOfOperations',
+                name : 'historyOfOperations',
+                component: HistoryOfOperations
             },
             {
                 path: 'info',

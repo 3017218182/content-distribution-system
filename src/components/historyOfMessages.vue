@@ -1,8 +1,9 @@
 <template>
-    <div id="draft" style="margin-left: 20px">
+    <div id="historyOfMessages" style="margin-left: 20px">
         <el-table :data="data" border>
             <el-table-column label="题目" prop="title"></el-table-column>
-            <el-table-column label="创建时间" prop="time"></el-table-column>
+            <el-table-column label="发布时间" prop="publishTime"></el-table-column>
+            <el-table-column label="发布平台" prop="platform"></el-table-column>
             <el-table-column label="操作" width="400px">
                 <template slot-scope="scope">
                     <el-button size="mini" type="info">查看详情</el-button>
@@ -17,8 +18,9 @@
 <script>
     import axios from "axios";
     import Qs from "qs";
+
     export default {
-        name: "draft",
+        name: "historyOfMessages",
         data(){
             return{
                 data: [],
@@ -27,12 +29,12 @@
         },
         created(){
             this.userID = this.$route.query.id
-            this.getAllOperation()
+            this.getAllMessages()
         },
         methods:{
-            getAllOperation(){
+            getAllMessages(){
                 const that = this
-                axios.post('http://127.0.0.1:5000/writer/drafts', Qs.stringify({
+                axios.post('http://127.0.0.1:5000/writer/historyOfMessages', Qs.stringify({
                     userID: this.userID
                 })).then(function(res){
                     console.log(res.data['status'])

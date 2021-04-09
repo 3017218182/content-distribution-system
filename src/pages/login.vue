@@ -16,6 +16,7 @@
 
 <script>
     import axios from 'axios'
+    import Qs from 'qs'
     export default {
         name: "login",
         data(){
@@ -24,21 +25,28 @@
                     username:'',
                     password:''
                 },
+
             }
         },
         methods:{
             login(){
                 const that = this;
-                axios.post('http://127.0.0.1:5000/',{
+                axios.post('http://127.0.0.1:5000/login', Qs.stringify({
                     username: this.info.username,
                     password: this.info.password
-                }).then(function(res){
-                    if (res.data===1) {
-                        console.log(res.data)
-                        that.$router.push({name: 'writer'})
+                })).then(function(res){
+                    if (res.data['status']==='ok') {
+                        console.log(res.data['info'])
+                        // const user = res.data['userID']
+                        that.$router.push({
+                            path: '/writer',
+                            query: {
+                                id: res.data['userID']
+                            }
+                        })
                     }
                     else {
-                        console.log(res.data)
+                        console.log(res.data['info'])
                     }
                 }).catch(function(error){
                     console.log(error.response)

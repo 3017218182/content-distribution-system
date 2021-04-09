@@ -1,9 +1,10 @@
 <template>
-    <div id="draft" style="margin-left: 20px">
+    <div id="historyOfOperations" style="margin-left: 20px">
         <el-table :data="data" border>
             <el-table-column label="题目" prop="title"></el-table-column>
-            <el-table-column label="创建时间" prop="time"></el-table-column>
-            <el-table-column label="操作" width="400px">
+            <el-table-column label="操作" prop="name"></el-table-column>
+            <el-table-column label="时间" prop="time"></el-table-column>
+            <el-table-column label="更多" width="400px">
                 <template slot-scope="scope">
                     <el-button size="mini" type="info">查看详情</el-button>
                     <el-button size="mini" type="success">操作记录</el-button>
@@ -17,8 +18,9 @@
 <script>
     import axios from "axios";
     import Qs from "qs";
+
     export default {
-        name: "draft",
+        name: "historyOfOperations",
         data(){
             return{
                 data: [],
@@ -32,7 +34,7 @@
         methods:{
             getAllOperation(){
                 const that = this
-                axios.post('http://127.0.0.1:5000/writer/drafts', Qs.stringify({
+                axios.post('http://127.0.0.1:5000/writer/historyOfOperations', Qs.stringify({
                     userID: this.userID
                 })).then(function(res){
                     console.log(res.data['status'])
