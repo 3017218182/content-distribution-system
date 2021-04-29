@@ -8,6 +8,13 @@
                     </el-col>
                 </el-row>
             </el-form-item>
+            <el-form-item label="账号">
+                <el-row>
+                    <el-col :span="6" :offset="2">
+                        <div class="msg">{{form.number}}</div>
+                    </el-col>
+                </el-row>
+            </el-form-item>
             <el-form-item label="姓名">
                 <el-row>
                     <el-col :span="6" :offset="2">
@@ -25,26 +32,40 @@
             <el-form-item label="密码">
                 <el-row>
                     <el-col :span="6" :offset="2">
-                        <div class="msg">{{form.key}}</div>
-                    </el-col>
-                    <el-col :span="1">
-                        <i class="el-icon-view"></i>
-                    </el-col>
-                    <el-col :span="10">
-                        <el-button>修改</el-button>
+                        <div class="msg" >{{form.key}}</div>
                     </el-col>
                 </el-row>
             </el-form-item>
             <el-form-item label="电话">
                 <el-row>
-                    <el-col :span="6" :offset="2" class="msg">
-                        <div>{{form.tel}}</div>
-                    </el-col>
-                    <el-col :span="10" :offset="1">
-                        <el-button>修改</el-button>
+                    <el-col :span="6" :offset="2">
+                        <div class="msg" >{{form.tel}}</div>
                     </el-col>
                 </el-row>
             </el-form-item>
+<!--            <el-form-item label="密码">-->
+<!--                <el-row>-->
+<!--                    <el-col :span="6" :offset="2">-->
+<!--                        <div class="msg">{{form.key}}</div>-->
+<!--                    </el-col>-->
+<!--                    <el-col :span="1">-->
+<!--                        <i class="el-icon-view"></i>-->
+<!--                    </el-col>-->
+<!--                    <el-col :span="10">-->
+<!--                        <el-button>修改</el-button>-->
+<!--                    </el-col>-->
+<!--                </el-row>-->
+<!--            </el-form-item>-->
+<!--            <el-form-item label="电话">-->
+<!--                <el-row>-->
+<!--                    <el-col :span="6" :offset="2" class="msg">-->
+<!--                        <div>{{form.tel}}</div>-->
+<!--                    </el-col>-->
+<!--                    <el-col :span="10" :offset="1">-->
+<!--                        <el-button>修改</el-button>-->
+<!--                    </el-col>-->
+<!--                </el-row>-->
+<!--            </el-form-item>-->
         </el-form>
     </div>
 </template>
@@ -58,11 +79,6 @@
         data (){
             return{
                 form:{
-                    id: '',
-                    name: "",
-                    job: "",
-                    key: "",
-                    tel: ""
                 }
             }
         },

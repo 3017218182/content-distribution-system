@@ -4,13 +4,6 @@
             <el-table-column label="题目" prop="title"></el-table-column>
             <el-table-column label="操作" prop="name"></el-table-column>
             <el-table-column label="时间" prop="time"></el-table-column>
-            <el-table-column label="更多" width="400px">
-                <template slot-scope="scope">
-                    <el-button size="mini" type="info">查看详情</el-button>
-                    <el-button size="mini" type="success">操作记录</el-button>
-                    <el-button size="mini" type="danger" :disabled="scope.row['publishTime']==='尚未发布'">删除</el-button>
-                </template>
-            </el-table-column>
         </el-table>
     </div>
 </template>

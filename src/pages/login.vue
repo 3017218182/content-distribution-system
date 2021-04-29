@@ -37,13 +37,23 @@
                 })).then(function(res){
                     if (res.data['status']==='ok') {
                         console.log(res.data['info'])
-                        // const user = res.data['userID']
-                        that.$router.push({
-                            path: '/writer',
-                            query: {
-                                id: res.data['userID']
-                            }
-                        })
+                        if (res.data['job']==='w'){
+                            // const user = res.data['userID']
+                            that.$router.push({
+                                path: '/writer',
+                                query: {
+                                    id: res.data['userID']
+                                }
+                            })
+                        }
+                        else {
+                            that.$router.push({
+                                path: '/reviewer',
+                                query: {
+                                    id: res.data['userID']
+                                }
+                            })
+                        }
                     }
                     else {
                         console.log(res.data['info'])

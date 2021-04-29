@@ -72,12 +72,13 @@
                 var that = this
                 let ifweb = this.contain("网站")
                 let ifwechat = this.contain("微信公众号")
+                console.log(ifweb)
                 axios.post('http://127.0.0.1:5000/writer/newMessage',Qs.stringify({
                     status: stat,
                     writer: this.userID,
                     title: this.message.title,
                     content: this.message.content,
-                    web: ifweb,
+                    website: ifweb,
                     wechat: ifwechat}
                 )).then(function(res){
                     if (res.data['status']==='ok'){
